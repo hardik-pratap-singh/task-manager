@@ -25,7 +25,7 @@ const Login = () => {
         event.preventDefault() ;  //ye bhi kaafi zaroori cheez hai bhai // isko bhool gye to kaafi faltu ki errors aa sakti 
         //hai like url me teri personal cheeze show hone lag sakti hai , email , password type cheeze 
 
-        const response = await fetch(`http://localhost:5000/auth/login` , {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/auth/login` , {
             method : "POST" , 
             headers: {
                 'Content-Type': 'application/json',

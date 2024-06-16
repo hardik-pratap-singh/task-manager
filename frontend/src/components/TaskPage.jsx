@@ -30,7 +30,7 @@ const TaskPage = () => {
         e.preventDefault();
         // here we will make an API call
 
-        const response = await fetch('http://localhost:5000/tasks/addTask', {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks/addTask`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const TaskPage = () => {
 
     const handleDelete = async (task) => {
         const id = task._id;
-        const response = await fetch(`http://localhost:5000/tasks/deleteTask/${id}`, {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks/deleteTask/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const TaskPage = () => {
         // e.preventDefault();
         // here we will make an API call
         // const id = task._id ; 
-        const response = await fetch(`http://localhost:5000/tasks/updateTask/${taskId}`, {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks/updateTask/${taskId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ const TaskPage = () => {
     const [AllTasks, setAllTasks] = useState([]);
     useEffect(() => {
         const getTask = async () => {
-            const response = await fetch("http://localhost:5000/tasks/getTask" , {
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks/getTask` , {
                 headers: {
                     'Content-Type': 'application/json',
                     "token" : localStorage.getItem('token')
@@ -154,7 +154,7 @@ const TaskPage = () => {
     }, [])
 
     const handleFilterCompleted = async () => {
-        const response = await fetch("http://localhost:5000/tasks/getCompletedTasks" , {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks/getCompletedTasks` , {
             headers: {
                 'Content-Type': 'application/json',
                 "token" : localStorage.getItem('token')
@@ -165,7 +165,7 @@ const TaskPage = () => {
     }
 
     const handleFilterPending = async () => {
-        const response = await fetch("http://localhost:5000/tasks/getPendingTasks" , {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks/getPendingTasks` , {
             headers: {
                 'Content-Type': 'application/json',
                 "token" : localStorage.getItem('token')
@@ -176,7 +176,7 @@ const TaskPage = () => {
     }
 
     const handleFilterShowAll = async () => {
-        const response = await fetch("http://localhost:5000/tasks/getTask" , {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks/getTask` , {
             headers: {
                 'Content-Type': 'application/json',
                 "token" : localStorage.getItem('token')
@@ -199,7 +199,7 @@ const TaskPage = () => {
         console.log("here", searchkey)
         if (searchkey.length === 0) {
             const getData = async () => {
-                const response = await fetch(`http://localhost:5000/tasks/getTask`, {
+                const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks/getTask`, {
                     headers: {
                         'Content-Type': 'application/json',
                         "token" : localStorage.getItem('token')
@@ -213,7 +213,7 @@ const TaskPage = () => {
         else {
 
             const getData = async () => {
-                const response = await fetch(`http://localhost:5000/tasks/search/${searchkey}` , {
+                const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks/search/${searchkey}` , {
                     headers: {
                         'Content-Type': 'application/json',
                         "token" : localStorage.getItem('token')
@@ -227,7 +227,7 @@ const TaskPage = () => {
     }, [searchkey])
 
     const handleSearch = async (searchkey) => {
-        const response = await fetch(`http://localhost:5000/tasks/search/${searchkey}` , {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tasks/search/${searchkey}` , {
             headers: {
                 'Content-Type': 'application/json',
                 "token" : localStorage.getItem('token')
