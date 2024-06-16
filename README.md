@@ -1,5 +1,7 @@
 # Task Master Pro
 
+![image](https://github.com/hardik-pratap-singh/task-manager/assets/97048877/3faa8645-388f-465c-9f5e-14740945d66d)
+
 ## Project Description
 
 Task Master Pro is a Task Management Web Application that allows users to efficiently manage their tasks. 
