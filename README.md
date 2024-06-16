@@ -95,3 +95,7 @@ The app provides functionality for users to register and log in, create, update,
    ```bash
    cd frontend
    npm start
+
+
+Task Master Pro is [Live](https://task-master-pro.netlify.app/) <br>
+Demo Video [here](https://drive.google.com/file/d/1TW76SpWQNbQqBbEGmtmQDXowr6LjbHbX/view?usp=sharing)
