@@ -14,7 +14,7 @@ const Profile = () => {
     let ref2 = useRef() ; 
 
     const data = async () => {
-        const response = await fetch(`http://localhost:5000/auth/getuser`, {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/auth/getuser`, {
             "method": "GET",
             headers: {
                 'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const Profile = () => {
 
     const handleClick =async () => {
         //api call for update password will go here 
-        const response = await fetch(`http://localhost:5000/auth/updatePassword`, {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/auth/updatePassword`, {
             "method": "PUT",
             headers: {
                 'Content-Type': 'application/json',
